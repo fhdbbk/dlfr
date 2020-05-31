@@ -1,2 +1,2 @@
 # dlfr
-DL Framework
+A DL Framework for CPU
