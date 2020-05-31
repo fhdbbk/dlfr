@@ -22,7 +22,7 @@ class Dense(Layer):
         self._weights = None
         self._bias = None
 
-    def __call__(self, input_layer):
+    def forward(self, input_layer):
         if len(input_layer.shape) == 1:
             input_layer = input_layer.reshape(input_layer.shape[0], -1)
         else:
@@ -35,6 +35,9 @@ class Dense(Layer):
         if self._use_bias:
             result += self._bias
         return result
+
+    def __call__(self, input_layer):
+        return self.forward(input_layer)
 
 if __name__ == '__main__':
     from activations import Relu
