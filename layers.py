@@ -37,8 +37,10 @@ class Dense(Layer):
         return result
 
 if __name__ == '__main__':
+    from activations import Relu
     inputs = np.array([[1, 2], [2, 3], [3, 4], [4, 5]])
-    res = Dense(3)(inputs)
-    print(res)
+    x = Dense(3)(inputs)
+    x = Relu()(x)
+    print(x)
         
 
